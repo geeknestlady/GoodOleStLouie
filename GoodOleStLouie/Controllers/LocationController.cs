@@ -19,7 +19,7 @@ namespace GoodOleStLouie.Controllers
         public IActionResult Index()
         {
             List<Location> locations = context.Locations.ToList();
-            return View();
+            return View(locations);
         }
 
         [HttpGet]
@@ -33,16 +33,16 @@ namespace GoodOleStLouie.Controllers
         [HttpPost]
         public IActionResult Create(Location location)
         {
-            //Location newLocation = new Location
-            
-               // Name = locationCreateViewModel.Name,
-               // Description = locationCreateViewModel.Description
-            return View();
+            // Location newLocation = new Location
+
+            //Name = locationCreateViewModel.Name,
+            //Description = locationCreateViewModel.Description
+            // return View();
+
+            context.Add(location);
+            context.SaveChanges();
+            return RedirectToAction(nameof(Index)); 
         }
-        /* context.Add(location);
-         context.SaveChanges();
-         return RedirectToAction(nameof(Index))*/
-        
         //revamp to use in view model
 
     }
