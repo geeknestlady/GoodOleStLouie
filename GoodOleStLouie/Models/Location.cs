@@ -10,5 +10,6 @@ namespace GoodOleStLouie.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public List<RateReview> {get;set;}
     }
 }
